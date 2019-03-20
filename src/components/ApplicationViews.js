@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Route } from "react-router-dom"
 
 import SchoolList from "./DashBoard/SchoolList"
-import SchoolForm from "./DashBoard/SchoolForm"
+// import SchoolForm from "./DashBoard/SchoolForm"
 import SchoolEdit from "./DashBoard/SchoolEdit"
 import SchoolManager from "../modules/SchoolManager"
 
@@ -13,7 +13,7 @@ import JobOptions from "./DashBoard/JobOptions"
 import JobOptionManager from "../modules/JobOptionManager"
 
 import JobList from "./DashBoard/JobList"
-import JobForm from "./DashBoard/JobForm"
+// import JobForm from "./DashBoard/JobForm"
 import JobEdit from "./DashBoard/JobEdit"
 import JobManager from "../modules/JobManager"
 
@@ -23,7 +23,12 @@ import ChatFormEdit from "./Chat/ChatFormEdit"
 import ChatManager from "../modules/ChatManager"
 
 import FriendList from "./Friend/FriendList"
+import FriendOption from "./Friend/FriendOption"
 import FriendManager from "../modules/FriendManager"
+
+import GiBillInfo from "./GiBill/GiBillInfo.js"
+
+// import FriendOptionManager from "../modules/FriendOptionManager"
 
 import UserManager from "../modules/UserManager"
 
@@ -145,6 +150,15 @@ class ApplicationViews extends Component {
       )
   }
 
+  addFriend = (friendOption) => {
+    return FriendManager.addFriend(friendOption)
+      .then(() => FriendManager.getAll())
+      .then(friends=> this.setState({
+        friends: friends
+      })
+      )
+  }
+
   deleteFriend = (id) => {
     fetch(`http://localhost:8088/friends/${id}`, {
       "method": "DELETE"
@@ -173,6 +187,8 @@ class ApplicationViews extends Component {
       FriendManager.getAll(activeuserId)
         .then(friends => newState.friends = friends)
 
+
+
       .then(() => this.setState(newState))
   }
   render() {
@@ -185,14 +201,7 @@ class ApplicationViews extends Component {
                         deleteSchool={this.deleteSchool}
                          />
                 }} />
-            <Route exact path="/dashboard" render={(props) => {
-                    return <SchoolForm
-                        {...props}
-                        schools={this.state.schools}
-                        addSchool={this.addSchool}
-                         />
-                }} />
-            <Route exact path="/dashboard/:schoolId(\d+)/edit" render={(props) => {
+            <Route exact path="/dashboard/:schoolId(\d+)/schooledit" render={(props) => {
                     return <SchoolEdit
                         {...props}
                         schools={this.state.schools}
@@ -214,14 +223,7 @@ class ApplicationViews extends Component {
                         deleteJob={this.deleteJob}
                          />
                 }} />
-            <Route exact path="/dashboard" render={(props) => {
-                    return <JobForm
-                        {...props}
-                        jobs={this.state.jobs}
-                        addJob={this.addJob}
-                         />
-                }} />
-            <Route exact path="/dashboard/:jobId(\d+)/edit" render={(props) => {
+            <Route exact path="/dashboard/:jobId(\d+)/jobedit" render={(props) => {
                     return <JobEdit
                         {...props}
                         jobs={this.state.jobs}
@@ -263,6 +265,18 @@ class ApplicationViews extends Component {
                         friends={this.state.friends}
                         deleteFriend={this.deleteFriend}/>
                 }} />
+                <Route exact path="/friendslist" render={(props) => {
+                    return <FriendOption
+                        {...props}
+                        users={this.state.users}
+                        friends={this.state.friends}
+                        addFriend={this.addFriend}
+                         />
+                        }} />
+                <Route exact path="/gibill" render={(props) => {
+                    return <GiBillInfo
+                         />
+                        }} />
            </React.Fragment>
   }
 }

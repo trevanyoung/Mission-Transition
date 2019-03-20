@@ -39,7 +39,12 @@ class JobDetailsModal extends React.Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.state.job.name}</ModalHeader>
                     <ModalBody>
-                    {this.state.job.description}
+                    Description
+                    <br></br>{this.state.job.description}
+                    <br></br>
+                    <br></br>
+                    Notes
+                    <br></br>{this.state.job.jobNotes}
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>

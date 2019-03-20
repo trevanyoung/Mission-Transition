@@ -23,21 +23,7 @@ class SchoolDetailsModal extends React.Component {
         }));
     }
 
-    schoolDetails = () => {
-        alert("THIS MODAL LIVES")
-        // const schoolDetails = {
-        //     id: this.state.id,
-        //     name: this.state.name,
-        //     description:this.state.description,
-        //     userId: this.state.userId,
 
-        // };
-
-        // this.setState({ modal: false })
-        // this.props.displayDetails(schoolDetails)
-
-
-    };
 
     render() {
 
@@ -54,7 +40,12 @@ class SchoolDetailsModal extends React.Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.state.school.name}</ModalHeader>
                     <ModalBody>
-                    {this.state.school.description}
+                    Description
+                    <br></br>{this.state.school.description}
+                    <br></br>
+                    <br></br>
+                    Notes
+                    <br></br>{this.state.school.notes}
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
@@ -64,6 +55,4 @@ class SchoolDetailsModal extends React.Component {
         );
     }
 }
-
-console.log("why")
 export default SchoolDetailsModal;

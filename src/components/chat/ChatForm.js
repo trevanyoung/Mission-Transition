@@ -30,7 +30,6 @@ render() {
     console.log("render -- ChatForm")
     return (
         <React.Fragment>
-
             <form className="chatForm">
                 <div className="form-group">
                     <label htmlFor="chatName"></label>

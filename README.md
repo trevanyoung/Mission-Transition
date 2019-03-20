@@ -1,8 +1,8 @@
-# Nutshell 🌰
+# Mission Transition
 
 ## What is this project and what does it do?
 
-## After I clone this repo, what do I need to do to setup and run this project?
+This is a social media application created using React that will assist military veteransin finding a career and educational institution
 
 ##### for markdown ideas https://markdown-it.github.io 😁
 

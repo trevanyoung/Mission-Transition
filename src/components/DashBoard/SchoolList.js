@@ -38,7 +38,7 @@ export default class SchoolList extends Component {
                             size="sm"
                             className=""
                             onClick={() => {
-                                this.props.history.push(`/dashboard/${school.id}/edit`);
+                                this.props.history.push(`/dashboard/${school.id}/schooledit`);
                             }}
                             >Edit
                         </Button>

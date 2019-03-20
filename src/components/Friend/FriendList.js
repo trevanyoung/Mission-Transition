@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 
+import { Card, CardImg, CardText, CardBody,CardTitle, CardSubtitle, Button } from 'reactstrap';
 
+import FriendListCard from "./FriendListCard";
 
 
 export default class FriendList extends Component {
@@ -10,17 +12,15 @@ export default class FriendList extends Component {
                 <section className="friendContainer" >
                    <h2 className="title">My Friends</h2>
                    {
-                this.props.friends.map(friend=>
+                    this.props.friends.map(friend=>
                     <div key={friend.id}>
-                    {this.props.users.find(
-                        user => user.id === friend.personId
-                    ).username}
-                        <button
-                            type="button"
-                            className=""
-                            onClick={() => this.props.deleteFriend(friend.id)}
-                            >Delete
-                        </button>
+                        <div>
+                            <FriendListCard key={`friendContainer-${friend.id}`}
+                                {...this.props}
+                                friend={friend}
+                                users={this.props.users}
+                                />
+                        </div>
                     </div>
                 )
             }

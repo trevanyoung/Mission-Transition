@@ -1,13 +1,18 @@
 import React, { Component } from "react"
-import JobManager from '../../modules/SchoolManager'
+import JobManager from '../../modules/JobManager'
 
 
 
 
-export default class SchoolEdit extends Component {
+export default class JobEdit extends Component {
     // Set initial state
     state = {
-        name: "",
+        id:Number(this.props.match.params.schoolId),
+        name:"",
+        jobNotes: "",
+        description:"",
+        careerId: "",
+        userId:"",
     }
 
 
@@ -23,6 +28,9 @@ export default class SchoolEdit extends Component {
         const editedJob = {
           id: this.props.match.params.jobId,
           name: this.state.name,
+          careerId:this.state.careerId,
+          description:this.state.description,
+          jobNotes: this.state.jobNotes,
           userId:parseInt(sessionStorage.getItem('credentials'))
         };
 
@@ -32,12 +40,17 @@ export default class SchoolEdit extends Component {
   }
 
     componentDidMount() {
-      JobManager.get(this.props.match.params.job)
+      JobManager.get(this.props.match.params.jobId)
       .then(job => {
         this.setState({
-            job: this.state.job
+          name:job.name,
+          careerId:job.careerId,
+          description:job.description,
+          jobNotes: job.jobNotes,
+          userId: job.userId
         });
-      });
+      })
+      .then(params=>console.log(this.state))
     }
 
 
@@ -46,14 +59,14 @@ export default class SchoolEdit extends Component {
           <React.Fragment>
             <form className="JobEditForm">
               <div className="form-group">
-                <label htmlFor="jobName">New Career Name</label>
+                <label htmlFor="jobName">New Career Notes</label>
                 <input
                   type="text"
                   required
                   className=""
                   onChange={this.handleFieldChange}
-                  id="name"
-                  value = {this.state.jobName}
+                  id="jobNotes"
+                  value = {this.state.jobNotes}
                 />
               </div>
 

@@ -1,13 +1,11 @@
 import React, { Component } from "react"
+import ChatBubbleCard from "./ChatBubbleCard";
 import "./ChatForm.css"
-// Set initial state
-//State must match Id value of input fields
 
 export default class ChatList extends Component {
 
     state = {
-        chats: "",
-        users:","
+        chats: ""
     }
 
 
@@ -16,26 +14,15 @@ export default class ChatList extends Component {
         // const {messages} = this.props;
         return (
             <section className="chats">
-            <div className="speech-bubble">
+            <div className="">
             {
                 this.props.chats.map(chat =>
                     <div key={chat.id}>
-                        {chat.message}
-                        {chat.username}
-                        <button
-                            type="button"
-                            className="btn btn-success"
-                            onClick={() => {
-                                this.props.history.push(`/chats/${chat.id}/edit`);
-                            }}
-                            >Edit
-                        </button>
-                        <button
-                            type="button"
-                            className="btn btn-success"
-                            onClick={() => this.props.deleteChatMessage(chat.id)}
-                            >Delete
-                        </button>
+                        <div>
+                            <ChatBubbleCard
+                            chat={chat}
+                            />
+                        </div>
                     </div>
                 )
             }

@@ -7,7 +7,12 @@ import SchoolManager from '../../modules/SchoolManager'
 export default class SchoolEdit extends Component {
     // Set initial state
     state = {
+        id:Number(this.props.match.params.schoolId),
+        name:"",
         notes: "",
+        description:"",
+        institutionId:"",
+        userId:"",
     }
 
 
@@ -22,6 +27,7 @@ export default class SchoolEdit extends Component {
 
         const editedSchool = {
           id: this.props.match.params.schoolId,
+          name:this.state.name,
           institutionId:this.state.institutionId,
           description:this.state.description,
           notes: this.state.notes,
@@ -34,13 +40,18 @@ export default class SchoolEdit extends Component {
   }
 
     componentDidMount() {
-      SchoolManager.get(this.props.match.params.school)
+      SchoolManager.get(this.props.match.params.schoolId)
       .then(school => {
         this.setState({
-            school: school
-        });
+          name:school.name,
+          institutionId:school.institutionId,
+          description:school.description,
+          notes: school.notes,
+          userId: school.userId
       });
-    }
+  })
+.then(params=>console.log(this.state))
+}
 
 
     render() {
@@ -48,7 +59,7 @@ export default class SchoolEdit extends Component {
           <React.Fragment>
             <form className="SchoolEditForm">
               <div className="form-group">
-                <label htmlFor="schoolName">Notes</label>
+                <label htmlFor="schoolName">New School Notes</label>
                 <input
                   type="text"
                   required

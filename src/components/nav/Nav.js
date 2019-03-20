@@ -29,7 +29,7 @@ class Nav extends Component {
             <Link className="nav-link" to="/gibill">Gi Bill Information</Link>
           </li>
         </ul>
-        <a className="nav-link">Aloha 🌺 {this.props.activeUser.username}</a>
+        <a className="nav-link">"Breaking it down Barney-style" for {this.props.activeUser.username}</a>
         <button
           type="button"
           className="btn btn-outline-info"

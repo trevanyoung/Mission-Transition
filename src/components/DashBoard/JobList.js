@@ -35,7 +35,7 @@ export default class JobList extends Component {
                             type="button"
                             className=""
                             onClick={() => {
-                                this.props.history.push(`/dashboard/${job.id}/edit`);
+                                this.props.history.push(`/dashboard/${job.id}/jobedit`);
                             }}
                             >Edit
                         </Button>
