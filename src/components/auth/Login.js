@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Jumbotron, Button } from 'reactstrap';
 import "./login.css"
 import UserManager from "../../modules/UserManager"
 
@@ -58,32 +59,70 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form className="loginForm">
-        <h1 className="h3 mb-3 font-weight-normal">Mission Transition...</h1>
+      // <form className="loginForm">
+      //   <h1 className="h3 mb-3 font-weight-normal">Mission Transition...</h1>
+      //   <label htmlFor="inputUsername">Username</label>
+      //   <input
+      //     onChange={this.handleFieldChange}
+      //     type="username"
+      //     id="username"
+      //     placeholder={` Something Cool`}
+      //     required=""
+      //     autoFocus=""
+      //   />
+      //   <label htmlFor="inputPassword">Password</label>
+      //   <input
+      //     onChange={this.handleFieldChange}
+      //     type="password"
+      //     id="password"
+      //     placeholder={` Don't tell!`}
+      //     required=""
+      //   />
+      //   <button type="submit" onClick={this.handleLogin}>
+      //     Sign in
+      //   </button>
+      //   <button type="submit" onClick={this.handleRegister}>
+      //     Register
+      //   </button>
+      // </form>
+
+      <div>
+      <Jumbotron>
+        <h1 className="display-3">Mission Transition</h1>
+        <p className="lead">Your journey to your next duty station</p>
+        <hr className="my-2" />
+        <p>Login or Register if you just received your DD214...</p>
+        <p className="lead">
         <label htmlFor="inputUsername">Username</label>
         <input
           onChange={this.handleFieldChange}
           type="username"
           id="username"
-          placeholder={` Something Cool`}
+          placeholder={`Nothing from MW2 XD`}
           required=""
           autoFocus=""
         />
         <label htmlFor="inputPassword">Password</label>
-        <input
+          <input
           onChange={this.handleFieldChange}
           type="password"
           id="password"
-          placeholder={` Don't tell!`}
+          placeholder={`OPSEC my guy`}
           required=""
         />
-        <button type="submit" onClick={this.handleLogin}>
-          Sign in
-        </button>
-        <button type="submit" onClick={this.handleRegister}>
-          Register
-        </button>
-      </form>
+        <Button
+          type="submit"
+          onClick={this.handleLogin}>
+           Sign in
+         </Button>
+         <Button
+          type="submit"
+          onClick={this.handleRegister}>
+           Register
+         </Button>
+        </p>
+      </Jumbotron>
+    </div>
     )
   }
 }

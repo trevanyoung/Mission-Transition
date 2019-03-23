@@ -1,7 +1,7 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 
-export default class GiBillInfod extends React.Component{
+export default class GiBillInfo extends React.Component{
 
 
 render (){

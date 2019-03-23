@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { Route } from "react-router-dom"
 
+import LandingPage from "./LandingPage"
+
 import SchoolList from "./DashBoard/SchoolList"
 // import SchoolForm from "./DashBoard/SchoolForm"
 import SchoolEdit from "./DashBoard/SchoolEdit"
@@ -27,8 +29,6 @@ import FriendOption from "./Friend/FriendOption"
 import FriendManager from "../modules/FriendManager"
 
 import GiBillInfo from "./GiBill/GiBillInfo.js"
-
-// import FriendOptionManager from "../modules/FriendOptionManager"
 
 import UserManager from "../modules/UserManager"
 
@@ -194,6 +194,10 @@ class ApplicationViews extends Component {
   render() {
     console.log(this.props.activeUser)
     return <React.Fragment>
+            <Route exact path="/" render={(props) => {
+                    return <LandingPage
+                         />
+                }} />
             <Route exact path="/dashboard" render={(props) => {
                     return <SchoolList
                         {...props}
