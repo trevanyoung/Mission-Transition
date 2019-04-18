@@ -5,6 +5,11 @@ import LandingPage from "./LandingPage"
 
 import SchoolList from "./DashBoard/SchoolList"
 // import SchoolForm from "./DashBoard/SchoolForm"
+import HerokuChatList from "./Chat/herokuchatlist"
+import HerokuChatForm from "./Chat/herokuchatform"
+import ChatFormEdit from "./Chat/ChatFormEdit"
+import ChatManager from "../modules/ChatManager"
+
 import SchoolEdit from "./DashBoard/SchoolEdit"
 import SchoolManager from "../modules/SchoolManager"
 
@@ -19,10 +24,6 @@ import JobList from "./DashBoard/JobList"
 import JobEdit from "./DashBoard/JobEdit"
 import JobManager from "../modules/JobManager"
 
-import HerokuChatList from "./Chat/herokuchatlist"
-import HerokuChatForm from "./Chat/herokuchatform"
-import ChatFormEdit from "./Chat/ChatFormEdit"
-import ChatManager from "../modules/ChatManager"
 
 import FriendList from "./Friend/FriendList"
 import FriendOption from "./Friend/FriendOption"
