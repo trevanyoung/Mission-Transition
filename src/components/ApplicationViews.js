@@ -21,14 +21,14 @@ import JobManager from "../modules/JobManager"
 
 import HerokuChatList from "Chat/HerokuChatList"
 import HerokuChatForm from "Chat/HerokuChatForm"
-import ChatFormEdit from "./Chat/ChatFormEdit"
+import ChatFormEdit from "Chat/ChatFormEdit"
 import ChatManager from "../modules/ChatManager"
 
-import FriendList from "./Friend/FriendList"
+import FriendList from "Friend/FriendList"
 import FriendOption from "./Friend/FriendOption"
 import FriendManager from "../modules/FriendManager"
 
-import GiBillInfo from "./GiBill/GiBillInfo.js"
+import GiBillInfo from "GiBill/GiBillInfo.js"
 
 import UserManager from "../modules/UserManager"
 let activeuserId = parseInt(sessionStorage.getItem('credentials'))
