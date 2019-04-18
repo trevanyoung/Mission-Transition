@@ -2,7 +2,12 @@
 
 ## What is this project and what does it do?
 
-This is a social media application built using React that will assist military veterans to find a career and educational institutions after their service.
+A web application built using Html, Css, Javascript / React, and Reactstrap. I built this particular application with the goal of assisting military veterans by presenting a list of in demand and well paying career fields in conjunction with related educational programs. 
 
-##### for markdown ideas https://markdown-it.github.io 😁
+## Planned Updates
+Version 1.2 of Mission Transition will impliment a fully functional chat room, and friends list. The components for both are currently in work components. 
+
+
+## Additional Information
+When signing up to test the application I would highly reccomend not using personal information for the username or password due to security reasons. 
 
