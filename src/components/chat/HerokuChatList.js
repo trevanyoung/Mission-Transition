@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import ChatBubbleCard from "./ChatBubbleCard";
 import "./ChatForm.css"
 
-export default class ChatList extends Component {
+export default class HerokuChatList extends Component {
 
     state = {
         chats: "",

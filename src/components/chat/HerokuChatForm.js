@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import "./ChatForm.css"
 
-export default class ChatForm extends Component {
+export default class HerokuChatForm extends Component {
     state = {
         chat: "",
     }
