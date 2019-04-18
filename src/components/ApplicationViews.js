@@ -19,8 +19,8 @@ import JobList from "./DashBoard/JobList"
 import JobEdit from "./DashBoard/JobEdit"
 import JobManager from "../modules/JobManager"
 
-import ChatList from "./Chat/ChatList"
-import ChatForm from "./Chat/ChatForm"
+import HerokuChatList from "./Chat/HerokuChatList"
+import HerokuChatForm from "./Chat/HerokuChatForm"
 import ChatFormEdit from "./Chat/ChatFormEdit"
 import ChatManager from "../modules/ChatManager"
 
@@ -203,14 +203,14 @@ class ApplicationViews extends Component {
                          />
                 }} />
            <Route exact path="/chats" render={(props) => {
-                    return <ChatList
+                    return <HerokuChatList
                         {...props}
                         chats={this.state.chats}
                         users={this.state.users}
                         deleteChatMessage={this.deleteChatMessage}/>
                 }} />
            <Route exact path="/chats" render={(props) => {
-                    return <ChatForm
+                    return <HerokuChatForm
                         {...props}
                         chats={this.state.chats}
                         users={this.state.users}
