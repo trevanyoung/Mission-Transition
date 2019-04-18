@@ -30,7 +30,7 @@ class SchoolDetailsModal extends React.Component {
         return (
             <div>
                 <Button
-                 color="primary"
+                 color="secondary"
                  size="sm"
                  type="button"
                  onClick={() => {

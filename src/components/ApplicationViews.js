@@ -31,7 +31,7 @@ import FriendManager from "../modules/FriendManager"
 import GiBillInfo from "./GiBill/GiBillInfo.js"
 
 import UserManager from "../modules/UserManager"
-
+let activeuserId = parseInt(sessionStorage.getItem('credentials'))
 
 
 class ApplicationViews extends Component {
@@ -65,18 +65,6 @@ class ApplicationViews extends Component {
       )
   }
 
-  deleteChatMessage = (id) => {
-    // if (this.state.chats.userId === parseInt(sessionStorage.getItem('credentials')))
-    fetch(`http://localhost:8088/chats/${id}`, {
-      "method": "DELETE"
-    })
-      .then(() => fetch("http://localhost:8088/chats?_expand=user"))
-      .then(r => r.json())
-      .then(chats => this.setState({ chats: chats }))
-      // else {
-      //   window.alert("You can only delete your message XD")
-      // }
-  }
 
   addSchool = (school) => {
     return SchoolManager.addSchool(school)
@@ -94,15 +82,6 @@ class ApplicationViews extends Component {
         schools: schools
       })
       )
-  }
-
-  deleteSchool = (id) => {
-    fetch(`http://localhost:8088/schools/${id}`, {
-      "method": "DELETE"
-    })
-      .then(() => fetch("http://localhost:8088/schools?userId"))
-      .then(r => r.json())
-      .then(schools => this.setState({ schools: schools }))
   }
 
   addSchoolOption = (schoolOption) => {
@@ -130,15 +109,6 @@ class ApplicationViews extends Component {
         jobs: jobs
       })
       )
-  }
-
-  deleteJob = (id) => {
-    fetch(`http://localhost:8088/jobs/${id}`, {
-      "method": "DELETE"
-    })
-      .then(() => fetch("http://localhost:8088/jobs?userId="))
-      .then(r => r.json())
-      .then(jobs => this.setState({ jobs: jobs }))
   }
 
   addJobOption = (jobOption) => {
@@ -174,17 +144,23 @@ class ApplicationViews extends Component {
     const newState = {}
       UserManager.getAll()
         .then(users => newState.users = users)
-      ChatManager.getAll()
+
+        .then(()=>ChatManager.getAll())
         .then(chats => newState.chats = chats)
-      SchoolManager.getAll(activeuserId)
+
+        .then(()=>SchoolManager.getAll(activeuserId))
         .then(schools => newState.schools = schools)
-      SchoolOptionManager.getAll()
+
+        .then(()=>SchoolOptionManager.getAll())
         .then(schoolOptions => newState.schoolOptions = schoolOptions)
-      JobManager.getAll(activeuserId)
+
+        .then(()=>JobManager.getAll(activeuserId))
         .then(jobs => newState.jobs =jobs)
-      JobOptionManager.getAll()
+
+        .then(()=>JobOptionManager.getAll())
         .then(jobOptions => newState.jobOptions =jobOptions)
-      FriendManager.getAll(activeuserId)
+
+        .then(()=>FriendManager.getAll(activeuserId))
         .then(friends => newState.friends = friends)
 
 
@@ -213,14 +189,6 @@ class ApplicationViews extends Component {
                          />
                 }} />
             <Route exact path="/dashboard" render={(props) => {
-                    return <SchoolOptions
-                        {...props}
-                        schools={this.state.schools}
-                        schoolOptions={this.state.schoolOptions}
-                        addSchoolOption={this.addSchoolOption}
-                         />
-                }} />
-            <Route exact path="/dashboard" render={(props) => {
                     return <JobList
                         {...props}
                         jobs={this.state.jobs}
@@ -232,14 +200,6 @@ class ApplicationViews extends Component {
                         {...props}
                         jobs={this.state.jobs}
                         updateJob={this.updateJob}
-                         />
-                }} />
-            <Route exact path="/dashboard" render={(props) => {
-                    return <JobOptions
-                        {...props}
-                        jobs={this.state.jobs}
-                        jobOptions={this.state.jobOptions}
-                        addJobOption={this.addJobOption}
                          />
                 }} />
            <Route exact path="/chats" render={(props) => {
@@ -269,14 +229,6 @@ class ApplicationViews extends Component {
                         friends={this.state.friends}
                         deleteFriend={this.deleteFriend}/>
                 }} />
-                <Route exact path="/friendslist" render={(props) => {
-                    return <FriendOption
-                        {...props}
-                        users={this.state.users}
-                        friends={this.state.friends}
-                        addFriend={this.addFriend}
-                         />
-                        }} />
                 <Route exact path="/gibill" render={(props) => {
                     return <GiBillInfo
                          />

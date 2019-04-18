@@ -6,14 +6,12 @@ import "./DashBoard.css"
 
 export default class SchoolOptions extends Component {
 
-    state = {
-        name: "",
-    }
 
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+
     };
 
     this.toggle = this.toggle.bind(this);
@@ -25,9 +23,6 @@ export default class SchoolOptions extends Component {
     }));
   }
 
-  componentDidMount() {
-
-  }
 
   constructNewSchoolOption = schoolOption => {
     console.log(schoolOption)
@@ -41,7 +36,7 @@ export default class SchoolOptions extends Component {
             }
 
             // Create the School and redirect user to the dashboard
-            this.props.addSchoolOption(newSchoolOption).then(() => this.props.history.push("/dashboard"))
+            this.props.addSchool(newSchoolOption).then(() => this.props.history.push("/dashboard"))
             console.log(newSchoolOption)
 
         } else {
@@ -54,7 +49,7 @@ export default class SchoolOptions extends Component {
     return (
       <div>
         <Button
-        color="danger"
+        color="info"
         size="sm"
         onClick={this.toggle}>{this.props.buttonLabel}
         View Schools

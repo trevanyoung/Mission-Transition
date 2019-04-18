@@ -23,6 +23,7 @@ export default class ChatForm extends Component {
                 userId:parseInt(sessionStorage.getItem('credentials'))
             }
             this.props.addChat(chat).then(() => this.props.history.push("/chats"))
+            console.log(chat)
         }
     }
 

@@ -24,9 +24,7 @@ export default class FriendOption extends Component {
     }));
   }
 
-  componentDidMount() {
 
-  }
 
   constructNewFriendOption = user => {
     console.log(user)
@@ -38,7 +36,7 @@ export default class FriendOption extends Component {
             }
 
             // Create the School and redirect user to the dashboard
-            this.props.addFriend(newFriend).then(() => this.props.history.push("/dashboard"))
+            this.props.addFriend(newFriend).then(() => this.props.history.push("/friendslist"))
             console.log(newFriend)
 
         } else {

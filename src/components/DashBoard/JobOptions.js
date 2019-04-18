@@ -25,9 +25,7 @@ export default class JobOptions extends Component {
     }));
   }
 
-  componentDidMount() {
 
-  }
 
   constructNewJobOption = jobOption => {
     console.log(jobOption)
@@ -41,7 +39,7 @@ export default class JobOptions extends Component {
             }
 
             // Create the School and redirect user to the dashboard
-            this.props.addJobOption(newJobOption).then(() => this.props.history.push("/dashboard"))
+            this.props.addJob(newJobOption).then(() => this.props.history.push("/dashboard"))
             console.log(newJobOption)
 
         } else {
@@ -54,7 +52,7 @@ export default class JobOptions extends Component {
     return (
       <div>
         <Button
-        color="danger"
+        color="info"
         size="sm"
         onClick={this.toggle}>{this.props.buttonLabel}
         View Jobs

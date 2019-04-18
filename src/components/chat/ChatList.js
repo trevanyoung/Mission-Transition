@@ -5,7 +5,8 @@ import "./ChatForm.css"
 export default class ChatList extends Component {
 
     state = {
-        chats: ""
+        chats: "",
+        users:""
     }
 
 
@@ -14,7 +15,7 @@ export default class ChatList extends Component {
         // const {messages} = this.props;
         return (
             <section className="chats">
-            <div className="">
+            <div className="speech-bubble-container">
             {
                 this.props.chats.map(chat =>
                     <div key={chat.id}>

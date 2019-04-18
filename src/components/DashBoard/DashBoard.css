@@ -1,7 +1,10 @@
-.schoolContainer{
-color:red;
+.dashBoardContainer{
+    display:flex;
 }
 
-.jobContainer {
-color:blue;
+.dashBoardContainer section{
+    border:5px #ccc solid;
+    padding:10px;
 }
+
+

@@ -12,7 +12,7 @@ render (){
                     <h1 className="display-3">What is Mission Transition?</h1>
                     <p className="lead"></p>
                     <hr className="my-2" />
-                    <p>Mission Transition is a social media application to connect veterans, and help them find their next place in the job market</p>
+                    <p>Mission Transition is a social media platform focused on non traditional, vocational, and associate degree educational programs to help veterans quickly find their next place in the civillian job market</p>
                     <p className="lead">
                     <Button
                         color="primary"
