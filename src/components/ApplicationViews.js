@@ -19,8 +19,8 @@ import JobList from "./DashBoard/JobList"
 import JobEdit from "./DashBoard/JobEdit"
 import JobManager from "../modules/JobManager"
 
-import HerokuChatList from "./Chat/HerokuChatList"
-import HerokuChatForm from "./Chat/HerokuChatForm"
+import HerokuChatList from "Chat/HerokuChatList"
+import HerokuChatForm from "Chat/HerokuChatForm"
 import ChatFormEdit from "./Chat/ChatFormEdit"
 import ChatManager from "../modules/ChatManager"
 
