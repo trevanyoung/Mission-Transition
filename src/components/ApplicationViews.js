@@ -19,7 +19,7 @@ import JobList from "./DashBoard/JobList"
 import JobEdit from "./DashBoard/JobEdit"
 import JobManager from "../modules/JobManager"
 
-import ChatList from "./Chat/ChatList";
+import ChatList from "./Chat/ChatList"
 import ChatForm from "./Chat/ChatForm"
 import ChatFormEdit from "./Chat/ChatFormEdit"
 import ChatManager from "../modules/ChatManager"
