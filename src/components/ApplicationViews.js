@@ -5,11 +5,6 @@ import LandingPage from "./LandingPage"
 
 import SchoolList from "./DashBoard/SchoolList"
 // import SchoolForm from "./DashBoard/SchoolForm"
-import HerokuChatList from "./Chat/herokuchatlist"
-import HerokuChatForm from "./Chat/herokuchatform"
-import ChatFormEdit from "./Chat/ChatFormEdit"
-import ChatManager from "../modules/ChatManager"
-
 import SchoolEdit from "./DashBoard/SchoolEdit"
 import SchoolManager from "../modules/SchoolManager"
 
@@ -24,6 +19,10 @@ import JobList from "./DashBoard/JobList"
 import JobEdit from "./DashBoard/JobEdit"
 import JobManager from "../modules/JobManager"
 
+// import HerokuChatList from "./Chat/herokuchatlist"
+// import HerokuChatForm from "./Chat/herokuchatform"
+// import ChatFormEdit from "./Chat/ChatFormEdit"
+// import ChatManager from "../modules/ChatManager"
 
 import FriendList from "./Friend/FriendList"
 import FriendOption from "./Friend/FriendOption"
@@ -48,23 +47,23 @@ class ApplicationViews extends Component {
     friends:[]
   }
 
-  addChat = (chat) => {
-    return ChatManager.addChat(chat)
-      .then(() => ChatManager.getAll())
-      .then(chats => this.setState({
-        chats: chats
-      })
-      )
-  }
+  // addChat = (chat) => {
+  //   return ChatManager.addChat(chat)
+  //     .then(() => ChatManager.getAll())
+  //     .then(chats => this.setState({
+  //       chats: chats
+  //     })
+  //     )
+  // }
 
-  updateChat = (chat) => {
-    return ChatManager.updateChat(chat)
-      .then(() => ChatManager.getAll())
-      .then(chats => this.setState({
-        chats: chats
-      })
-      )
-  }
+  // updateChat = (chat) => {
+  //   return ChatManager.updateChat(chat)
+  //     .then(() => ChatManager.getAll())
+  //     .then(chats => this.setState({
+  //       chats: chats
+  //     })
+  //     )
+  // }
 
 
   addSchool = (school) => {
@@ -146,8 +145,8 @@ class ApplicationViews extends Component {
       UserManager.getAll()
         .then(users => newState.users = users)
 
-        .then(()=>ChatManager.getAll())
-        .then(chats => newState.chats = chats)
+        // .then(()=>ChatManager.getAll())
+        // .then(chats => newState.chats = chats)
 
         .then(()=>SchoolManager.getAll(activeuserId))
         .then(schools => newState.schools = schools)
@@ -203,26 +202,26 @@ class ApplicationViews extends Component {
                         updateJob={this.updateJob}
                          />
                 }} />
-           <Route exact path="/chats" render={(props) => {
+           {/* <Route exact path="/chats" render={(props) => {
                     return <HerokuChatList
                         {...props}
                         chats={this.state.chats}
                         users={this.state.users}
                         deleteChatMessage={this.deleteChatMessage}/>
-                }} />
-           <Route exact path="/chats" render={(props) => {
+                }} /> */}
+           {/* <Route exact path="/chats" render={(props) => {
                     return <HerokuChatForm
                         {...props}
                         chats={this.state.chats}
                         users={this.state.users}
                         addChat={this.addChat}/>
-                }} />
-            <Route exact path="/chats/:chatId(\d+)/edit" render={(props) => {
+                }} /> */}
+            {/* <Route exact path="/chats/:chatId(\d+)/edit" render={(props) => {
                     return <ChatFormEdit
                         {...props}
                         chats={this.state.chats}
                         updateChat={this.updateChat}/>
-                }} />
+                }} /> */}
             <Route exact path="/friendslist" render={(props) => {
                     return <FriendList
                         {...props}
