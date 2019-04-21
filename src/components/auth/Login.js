@@ -89,37 +89,53 @@ export default class Login extends Component {
       <div>
       <Jumbotron>
         <h1 className="display-3">Mission Transition</h1>
-        <p className="lead">Your journey to your next duty station</p>
+        <p className="login">Your journey to your next duty station</p>
         <hr className="my-2" />
-        <p>Login or Register if you just received your DD214...</p>
+        <p className="loginInstruction">Login or Register if you have just received your DD214...</p>
         <p className="lead">
-        <label htmlFor="inputUsername">Username</label>
-        <input
-          onChange={this.handleFieldChange}
-          type="username"
-          id="username"
-          placeholder={`Nothing from MW2 XD`}
-          required=""
-          autoFocus=""
-        />
-        <label htmlFor="inputPassword">Password</label>
-          <input
-          onChange={this.handleFieldChange}
-          type="password"
-          id="password"
-          placeholder={`OPSEC my guy`}
-          required=""
-        />
-        <Button
-          type="submit"
-          onClick={this.handleLogin}>
-           Sign in
-         </Button>
-         <Button
-          type="submit"
-          onClick={this.handleRegister}>
-           Register
-         </Button>
+          <div className="loginRegisterForm">
+            <div className="loginFormFields">
+            <div className="loginRegisterUsername">
+              <label htmlFor="inputUsername">Username</label>
+              <input
+                onChange={this.handleFieldChange}
+                type="username"
+                id="username"
+                placeholder={`please type username...`}
+                required=""
+                autoFocus=""
+                className="loginFields"
+              />
+            </div>
+          <div className="loginRegisterPassword">
+            <label htmlFor="inputPassword">Password</label>
+              <input
+              onChange={this.handleFieldChange}
+              type="password"
+              id="password"
+              placeholder={`please type password...`}
+              required=""
+              className="loginFields"
+            />
+            </div>
+          </div>
+          <div className="loginButtons">
+            <div className="loginButton">
+            <Button
+              type="submit"
+              onClick={this.handleLogin}>
+              Sign in
+            </Button>
+          </div>
+          <div className="registerButton">
+            <Button
+              type="submit"
+              onClick={this.handleRegister}>
+              Register
+            </Button>
+            </div>
+          </div>
+         </div>
         </p>
       </Jumbotron>
     </div>

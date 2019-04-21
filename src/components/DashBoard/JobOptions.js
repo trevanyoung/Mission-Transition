@@ -51,12 +51,14 @@ export default class JobOptions extends Component {
   render() {
     return (
       <div>
-        <Button
-        color="info"
-        size="sm"
-        onClick={this.toggle}>{this.props.buttonLabel}
-        View Jobs
-        </Button>
+        <p className="viewJobsButton">
+          <Button
+          color="info"
+          size="sm"
+          onClick={this.toggle}>{this.props.buttonLabel}
+          View Jobs
+          </Button>
+        </p>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Job Options</ModalHeader>
           <ModalBody>

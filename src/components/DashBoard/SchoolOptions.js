@@ -48,12 +48,14 @@ export default class SchoolOptions extends Component {
   render() {
     return (
       <div>
-        <Button
-        color="info"
-        size="sm"
-        onClick={this.toggle}>{this.props.buttonLabel}
-        View Schools
-        </Button>
+        <p className="viewSchoolsButton">
+          <Button
+          color="info"
+          size="sm"
+          onClick={this.toggle}>{this.props.buttonLabel}
+          View Schools
+          </Button>
+        </p>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>School Options</ModalHeader>
           <ModalBody>

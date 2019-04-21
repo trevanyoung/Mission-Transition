@@ -95,11 +95,19 @@ class ApplicationViews extends Component {
 
   addJob = (job) => {
     return JobManager.addJob(job)
-      .then(() => JobManager.getAll())
+      .then(() => JobManager.getAll(activeuserId))
       .then(jobs => this.setState({
         jobs: jobs
       })
       )
+  }
+
+  deleteJob = (id) => {
+    fetch(`http://localhost:8088/jobs/${id}`, {
+      "method": "DELETE"
+    })
+      .then(() => JobManager.getAll(activeuserId))
+      .then(jobs => this.setState({ jobs: jobs }))
   }
 
   updateJob = (job) => {
@@ -179,6 +187,10 @@ class ApplicationViews extends Component {
                         {...props}
                         schools={this.state.schools}
                         deleteSchool={this.deleteSchool}
+                        {...props}
+                        jobs={this.state.jobs}
+                        deleteJob={this.deleteJob}
+                        addJob={this.addJob}
                          />
                 }} />
             <Route exact path="/dashboard/:schoolId(\d+)/schooledit" render={(props) => {
@@ -188,13 +200,13 @@ class ApplicationViews extends Component {
                         updateSchool={this.updateSchool}
                          />
                 }} />
-            <Route exact path="/dashboard" render={(props) => {
+            {/* <Route exact path="/dashboard" render={(props) => {
                     return <JobList
                         {...props}
                         jobs={this.state.jobs}
-                        deleteJob={this.deleteJob}
-                         />
-                }} />
+                        deleteJob={this.deleteJob} */
+                         /* />
+                }} /> */}
             <Route exact path="/dashboard/:jobId(\d+)/jobedit" render={(props) => {
                     return <JobEdit
                         {...props}

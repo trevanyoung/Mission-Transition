@@ -1,10 +1,64 @@
+
+
 .dashBoardContainer{
-    display:flex;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items:center;
+    padding:5px;
+    margin: 20px
 }
-
+/*
 .dashBoardContainer section{
+    border:1px #ccc solid;
+    padding:5px;
+} */
+
+
+.jobContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
     border:5px #ccc solid;
-    padding:10px;
+    padding:5px;
+}
+.schoolContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    border:5px #ccc solid;
+    padding:5px;
 }
 
 
+/* .componentContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items:center;
+    margin: 20px
+} */
+
+.jobTitle{
+ text-align: center
+}
+
+.viewJobsButton{
+    text-align: center
+}
+
+.schoolTitle{
+    text-align: center
+}
+
+.viewSchoolsButton{
+    text-align: center
+}
+
+.btn{
+    margin-left:5px;
+}
+
+.modalDescriptions{
+    font-weight:bold
+}

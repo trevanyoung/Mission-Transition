@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Container, Row, Col } from 'reactstrap';
 import { Button } from 'reactstrap';
 
 
@@ -7,6 +8,7 @@ import SchoolDetailsModal from "./SchoolDetailsModal";
 import SchoolManager from "../../modules/SchoolManager";
 import SchoolOptionManager from "../../modules/SchoolOptionManager"
 import SchoolOptions from "./SchoolOptions";
+import JobList from "./JobList";
 let activeuserId = parseInt(sessionStorage.getItem('credentials'))
 export default class SchoolList extends Component {
 
@@ -49,46 +51,54 @@ export default class SchoolList extends Component {
         return (
             <React.Fragment>
                 <div className="dashBoardContainer">
-                    <section className="schoolContainer">
-                    <h2 className="title">My Schools</h2>
-                    {
-                    this.state.schools.map(school =>
-                        <div key={school.id}>
-                            {school.name}
-                            <Button
-                                color="primary"
-                                size="sm"
-                                className=""
-                                onClick={() => {
-                                    this.props.history.push(`/dashboard/${school.id}/schooledit`);
-                                }}
-                                >Edit
-                            </Button>
-                            <Button
-                                color="danger"
-                                size="sm"
-                                type="button"
-                                className=""
-                                // onClick={() => this.props.deleteSchool(school.id)}
-                                onClick={() =>this.deleteSchool(school.id)}
-                                >Delete
-                            </Button>
-                            <div>
-                                <SchoolDetailsModal key={`schoolContainer-${school.id}`}
-                                    schools={school}
+                    <section className="jobContainer">
+                    <JobList
+                            {...this.props}
+                            jobs={this.props.jobs}
+                            deleteJob={this.props.deleteJob}
+                            addJob={this.props.addJob}/>
+                            </section>
+                        <section className="schoolContainer">
+                        <h2 className="schoolTitle">My Schools</h2>
+                        {
+                        this.state.schools.map(school =>
+                            <div key={school.id}>
+                                {school.name}
+                                <Button
+                                    color="primary"
+                                    size="sm"
+                                    className=""
+                                    onClick={() => {
+                                        this.props.history.push(`/dashboard/${school.id}/schooledit`);
+                                    }}
+                                    >Edit
+                                </Button>
+                                <Button
+                                    color="danger"
+                                    size="sm"
+                                    type="button"
+                                    className=""
+                                    // onClick={() => this.props.deleteSchool(school.id)}
+                                    onClick={() =>this.deleteSchool(school.id)}
+                                    >Delete
+                                </Button>
+                                <div>
+                                    <SchoolDetailsModal key={`schoolContainer-${school.id}`}
+                                        schools={school}
 
-                                    />
+                                        />
+
+                            </div>
                         </div>
-                    </div>
-                    )
-                }
-                    </section>
+                        )
+                    }
+                                    <SchoolOptions
+                                    {...this.props}
+                                    addSchool={this.addSchool}
+                                    schoolOptions={this.state.schoolOptions}
+                                    />
+                        </section>
                 </div>
-                <SchoolOptions
-                {...this.props}
-                addSchool={this.addSchool}
-                schoolOptions={this.state.schoolOptions}
-                />
             </React.Fragment>
         )
     }

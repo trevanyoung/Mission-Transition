@@ -1,3 +1,48 @@
 .loginForm {
     padding: 0 25px;
 }
+
+.login{
+    text-align: center
+}
+
+.loginInstruction{
+    text-align: center
+}
+.loginRegisterForm{
+
+    margin: auto
+}
+
+.loginFormFields{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items:center;
+}
+
+.loginRegisterUsername{
+    display: flex;
+    flex-direction: column;
+}
+
+.loginRegisterPassword{
+    display: flex;
+    flex-direction: column;
+}
+.loginButtons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items:center;
+}
+
+.loginButton{
+    display: flex;
+    flex-direction: column;
+}
+
+.registerButton{
+    display: flex;
+    flex-direction: column;
+}

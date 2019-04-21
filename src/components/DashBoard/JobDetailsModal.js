@@ -39,7 +39,7 @@ class JobDetailsModal extends React.Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.state.job.name}</ModalHeader>
                     <ModalBody>
-                    Description
+                    <p className="modalDescriptions">Description</p>
                     <br></br>{this.state.job.description}
                     <br></br>
                     <br></br>

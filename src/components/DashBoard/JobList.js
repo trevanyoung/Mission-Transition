@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { Container, Row, Col } from 'reactstrap';
 import { Button } from 'reactstrap';
 
 import "./DashBoard.css"
@@ -36,22 +37,16 @@ export default class JobList extends Component {
           )
       }
 
-      deleteJob = (id) => {
-        fetch(`http://localhost:8088/jobs/${id}`, {
-          "method": "DELETE"
-        })
-          .then(() => JobManager.getAll(activeuserId))
-          .then(jobs => this.setState({ jobs: jobs }))
-      }
 
     render() {
         return (
             <React.Fragment>
+                {/* <div className="componentContainer">
                 <div className="dashBoardContainer">
-                    <section className="jobContainer" >
-                    <h2 className="title">My Jobs</h2>
+                    <section className="jobContainer" > */}
+                    <h2 className="jobTitle">My Jobs</h2>
                     {
-                    this.state.jobs.map(job =>
+                    this.props.jobs.map(job =>
                         <div key={job.id}>
                             {job.name}
                             {job.salary}
@@ -69,7 +64,7 @@ export default class JobList extends Component {
                                 color="danger"
                                 size="sm"
                                 className=""
-                                onClick={() =>this.deleteJob(job.id)}
+                                onClick={() =>this.props.deleteJob(job.id)}
                                 >Delete
                             </Button>
                             <JobDetailsModal key={`jobContainer-${job.id}`}
@@ -78,13 +73,15 @@ export default class JobList extends Component {
                         </div>
                     )
                 }
-                    </section>
-                </div>
                 <JobOptions
                 {...this.props}
-                addJob={this.addJob}
+                addJob={this.props.addJob}
                 jobOptions={this.state.jobOptions}
                 />
+                        {/* </section>
+
+                </div>
+                </div> */}
             </React.Fragment>
         )
     }
