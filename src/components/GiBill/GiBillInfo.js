@@ -1,6 +1,8 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 
+import "./GiBill.css"
+
 export default class GiBillInfo extends React.Component{
 
 
@@ -27,15 +29,18 @@ render (){
                 <Jumbotron>
                     <h1 className="display-3">Montgomery GI Bill (MGIB)</h1>
                     <p className="lead">The Montgomery GI Bill (MGIB) assists active duty Servicemembers and Reservists in pursuing higher education degrees, certificates, and other education and training. MGIB supports those who enlist in the U.S. armed forces through two main programs:</p>
-                        <Button
-                        href="https://www.va.gov/education/about-gi-bill-benefits/montgomery-active-duty/"
-                        >Montgomery GI Bill Active Duty
-                        </Button>
-                            <br></br>
-                        <Button
-                        href="https://www.va.gov/education/about-gi-bill-benefits/montgomery-selected-reserve/"
-                        >Montgomery GI Bill Selected Reserve
-                        </Button>
+                        <div className="montGomActiveButton">
+                            <Button
+                            href="https://www.va.gov/education/about-gi-bill-benefits/montgomery-active-duty/"
+                            >Montgomery GI Bill Active Duty
+                            </Button>
+                        </div>
+                        <div className="montGomReserveButton">
+                            <Button
+                            href="https://www.va.gov/education/about-gi-bill-benefits/montgomery-selected-reserve/"
+                            >Montgomery GI Bill Selected Reserve
+                            </Button>
+                        </div>
                     <hr className="my-2" />
                     <p>Click below to learn more about The Gi Bill !</p>
                     <p className="lead">
