@@ -3,7 +3,7 @@ https://mission-transition.herokuapp.com/
 
 ## What is this project and what does it do?
 
-A web application built using Html, Css, Javascript / React, and Reactstrap. The data is managed via JSON server. I built this particular application with the goal of assisting military veterans by presenting a list of in demand and well paying career fields in conjunction with related educational programs.
+Mission Transition is web application built using Html, Css, Javascript / React, and Reactstrap. The data is managed via JSON server. I built this particular application with the goal of assisting military veterans by presenting a list of in demand and well paying career fields in conjunction with related educational programs.
 
 ## Application Use Instructions
 Upon the application loading you can create a username and password, and then click register
