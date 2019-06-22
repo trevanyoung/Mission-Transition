@@ -1,13 +1,38 @@
+.bg{
+    background-image:url(../../../../ReactCapstone/src/balukhelbackground.jpg);
+    background-position:bottom;
+    background-size:cover;
+    width:100%;
+    height:100vh;
+    margin-top: -75px;
+
+};
+
+/* body {
+    background-image:url(../../../../ReactCapstone/src/balukhelbackground.jpg);
+    background-position:center;
+    background-size:cover;
+    background-size:100vh;
+} */
+
+
+.display3{
+    color:black;
+    opacity: 1.0;
+}
+
 .loginForm {
     padding: 0 25px;
 }
 
 .login{
-    text-align: center
+    text-align: center;
+    font-size:30px;
 }
 
 .loginInstruction{
-    text-align: center
+    text-align: center;
+    font-size:19px;
 }
 .loginRegisterForm{
 
@@ -24,11 +49,18 @@
 .loginRegisterUsername{
     display: flex;
     flex-direction: column;
+    margin-right:10px;
+    justify-content: center;
+    align-items:center;
+
 }
 
 .loginRegisterPassword{
     display: flex;
     flex-direction: column;
+    margin-left:10px;
+    justify-content: center;
+    align-items:center;
 }
 .loginButtons{
     display: flex;
@@ -41,6 +73,8 @@
     display: flex;
     flex-direction: column;
     padding:5px;
+    justify-content:center;
+    margin-right:150px;
 }
 
 .registerButton{
@@ -48,3 +82,14 @@
     flex-direction: column;
     padding:5px;
 }
+
+.usernameText{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.passwordText{
+    font-size:25px;
+    font-weight:bold;
+}
+

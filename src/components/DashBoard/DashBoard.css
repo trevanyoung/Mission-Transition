@@ -8,12 +8,6 @@
     padding:5px;
     margin: 20px
 }
-/*
-.dashBoardContainer section{
-    border:1px #ccc solid;
-    padding:5px;
-} */
-
 
 .jobContainer{
     display: flex;
@@ -62,3 +56,49 @@
 .modalDescriptions{
     font-weight:bold
 }
+
+.jobDiv{
+    display:flex;
+    justify-content: space-between;
+    border:5px black solid;
+    padding:5px;
+    margin:5px;
+}
+
+.schoolDiv{
+    display:flex;
+    justify-content: space-between;
+    border:5px black solid;
+    padding:5px;
+    margin:5px;
+}
+
+.jobNameDiv{
+    display:flex;
+    justify-content:flex-start;
+    padding:5px;
+    margin:5px;
+}
+
+.schoolNameDiv{
+    display:flex;
+    justify-content:flex-start;
+    padding:5px;
+    margin:5px;
+}
+.buttonDiv{
+    display:flex;
+    justify-content: flex-end;
+    padding:5px;
+    margin:5px;
+}
+ .editButton{
+    display: flex;
+    flex-direction: column;
+}
+
+.deleteButton{
+    display: flex;
+    flex-direction: column;
+}
+

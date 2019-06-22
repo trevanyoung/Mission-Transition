@@ -47,29 +47,33 @@ export default class JobList extends Component {
                     <h2 className="jobTitle">My Jobs</h2>
                     {
                     this.props.jobs.map(job =>
-                        <div key={job.id}>
+                        <div className="jobDiv" key={job.id}>
+                            <div className="jobNameDiv">
                             {job.name}
-                            {job.salary}
-                            {job.credential}
-                            <Button
-                                color="primary"
-                                size="sm"
-                                className=""
-                                onClick={() => {
-                                    this.props.history.push(`/dashboard/${job.id}/jobedit`);
-                                }}
-                                >Edit
-                            </Button>
-                            <Button
-                                color="danger"
-                                size="sm"
-                                className=""
-                                onClick={() =>this.props.deleteJob(job.id)}
-                                >Delete
-                            </Button>
-                            <JobDetailsModal key={`jobContainer-${job.id}`}
-                                    jobs={job}
-                                    />
+                            </div>
+                                <div className="buttonDiv">
+                                {job.salary}
+                                {job.credential}
+                                <Button
+                                    color="primary"
+                                    size="sm"
+                                    className="editButton"
+                                    onClick={() => {
+                                        this.props.history.push(`/dashboard/${job.id}/jobedit`);
+                                    }}
+                                    >Edit
+                                </Button>
+                                <Button
+                                    color="danger"
+                                    size="sm"
+                                    className="deleteButton"
+                                    onClick={() =>this.props.deleteJob(job.id)}
+                                    >Delete
+                                </Button>
+                                <JobDetailsModal key={`jobContainer-${job.id}`}
+                                        jobs={job}
+                                        />
+                                </div>
                         </div>
                     )
                 }

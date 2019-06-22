@@ -85,40 +85,40 @@ export default class Login extends Component {
       //     Register
       //   </button>
       // </form>
-
+      <body className="bg">
       <div>
-      <Jumbotron>
+      {/* <Jumbotron className="jumbotron"> */}
         <h1 className="display-3">Mission Transition</h1>
         <p className="login">Your journey to your next duty station</p>
-        <hr className="my-2" />
+        {/* <hr className="my-2"/> */}
         <p className="loginInstruction">Login or Register if you have just received your DD214...</p>
         <p className="lead">
           <div className="loginRegisterForm">
-            <div className="loginFormFields">
-            <div className="loginRegisterUsername">
-              <label htmlFor="inputUsername">Username</label>
-              <input
-                onChange={this.handleFieldChange}
-                type="username"
-                id="username"
-                placeholder={`please type username...`}
-                required=""
-                autoFocus=""
-                className="loginFields"
-              />
-            </div>
-          <div className="loginRegisterPassword">
-            <label htmlFor="inputPassword">Password</label>
-              <input
-              onChange={this.handleFieldChange}
-              type="password"
-              id="password"
-              placeholder={`please type password...`}
-              required=""
-              className="loginFields"
-            />
-            </div>
-          </div>
+              <div className="loginFormFields">
+                <div className="loginRegisterUsername">
+                  <label htmlFor="inputUsername" className="usernameText">Username</label>
+                  <input
+                    onChange={this.handleFieldChange}
+                    type="username"
+                    id="username"
+                    placeholder={`please type username...`}
+                    required=""
+                    autoFocus=""
+                    className="loginFields"
+                  />
+                </div>
+              <div className="loginRegisterPassword">
+                <label htmlFor="inputPassword" className="passwordText">Password</label>
+                  <input
+                  onChange={this.handleFieldChange}
+                  type="password"
+                  id="password"
+                  placeholder={`please type password...`}
+                  required=""
+                  className="loginFields"
+                />
+                </div>
+              </div>
           <div className="loginButtons">
             <div className="loginButton">
             <Button
@@ -137,8 +137,9 @@ export default class Login extends Component {
           </div>
          </div>
         </p>
-      </Jumbotron>
+      {/* </Jumbotron> */}
     </div>
+    </body>
     )
   }
 }
