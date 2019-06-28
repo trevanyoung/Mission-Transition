@@ -66,14 +66,14 @@ class ApplicationViews extends Component {
   // }
 
 
-  addSchool = (school) => {
-    return SchoolManager.addSchool(school)
-      .then(() => SchoolManager.getAll())
-      .then(schools => this.setState({
-        schools: schools
-      })
-      )
-  }
+  // addSchool = (school) => {
+  //   return SchoolManager.addSchool(school)
+  //     .then(() => SchoolManager.getAll())
+  //     .then(schools => this.setState({
+  //       schools: schools
+  //     })
+  //     )
+  // }
 
   updateSchool = (school) => {
     return SchoolManager.updateSchool(school)

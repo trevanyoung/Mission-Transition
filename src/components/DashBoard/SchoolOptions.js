@@ -30,7 +30,7 @@ export default class SchoolOptions extends Component {
         school.institutionId === schoolOption.institutionId)=== undefined) {
             const newSchoolOption = {
                 name: schoolOption.name,
-                institutionId: schoolOption.instiutionId,
+                institutionId: schoolOption.institutionId,
                 description: schoolOption.description,
                 userId:parseInt(sessionStorage.getItem('credentials'))
             }

@@ -7,7 +7,7 @@ import JobManager from '../../modules/JobManager'
 export default class JobEdit extends Component {
     // Set initial state
     state = {
-        id:Number(this.props.match.params.schoolId),
+        id:Number(this.props.match.params.jobId),
         name:"",
         jobNotes: "",
         description:"",
